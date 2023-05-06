@@ -27,7 +27,6 @@ export default function MainLayout({ children }) {
   return (
     <div className="min-h-screen grid md:grid-cols-[1fr_2fr] xl:grid-cols-[1fr_2fr_1fr] items-start w-[95%] relative max-w-[1100px] mx-auto gap-12">
       <Toaster />
-
       {/* mobile menu button */}
       <button
         type="button"
