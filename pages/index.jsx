@@ -88,7 +88,7 @@ export default function Home({ data: session, initialPosts, query }) {
       {posts.length === 0 && query.feed === "foryou" && (
         <Alert type={"empty"} message="No posts yet" />
       )}
-      <ul className="flex flex-col gap-8 bg-white shadow-sm">
+      <ul className="flex flex-col gap-8 bg-black shadow-sm">
         {posts.length !== 0 &&
           posts.map((post) => {
             return (

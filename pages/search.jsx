@@ -70,8 +70,8 @@ export default function Search({ data: session, initialPosts, users, query }) {
       </Head>
       <StickyBlock />
 
-      <div className="py-7 bg-white shadow-sm rounded-lg">
-        <p className="text-gray-700 font-medium text-sm mb-6 px-6">
+      <div className="py-7 bg-black shadow-sm rounded-lg">
+        <p className="text-white font-medium text-sm mb-6 px-6">
           Search results
         </p>
         {users.length === 0 && posts.length === 0 && (
@@ -82,7 +82,7 @@ export default function Search({ data: session, initialPosts, users, query }) {
         )}
         {users.length !== 0 && (
           <section className="mb-12 px-6">
-            <h2 className="font-bold text-lg text-gray-900 mb-3">Users</h2>
+            <h2 className="font-bold text-lg text-white mb-3">Users</h2>
             <div className="flex items-center gap-3 flex-wrap">
               {users.map((user) => {
                 const { _id, username, image } = user
@@ -111,7 +111,7 @@ export default function Search({ data: session, initialPosts, users, query }) {
         )}
         {posts.length !== 0 && (
           <section>
-            <h2 className="font-bold text-lg text-gray-900 mb-3 px-7">Posts</h2>
+            <h2 className="font-bold text-lg text-white mb-3 px-7">Posts</h2>
             {posts.map((post) => {
               return (
                 <Post

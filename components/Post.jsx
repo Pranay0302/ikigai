@@ -68,11 +68,11 @@ export default function Post({ session, post, actions, setPosts }) {
   }, [post])
 
   return (
-    <div className="mt-4">
-      <div className="px-4 md:px-7">
+    <div className="mt-4 bg-gray-700 rounded-xl">
+      <div className="mt-4 md:px-7">
         <div className="justify-between flex items-start mb-3">
           <div className="flex gap-2 items-center">
-            <div className="aspect-square overflow-hidden w-[40px] rounded-full border border-gray-300">
+            <div className="aspect-square overflow-hidden w-[40px] rounded-full border border-black-300">
               <Image
                 src={getImageUrl + image}
                 alt="avatar"
@@ -84,7 +84,7 @@ export default function Post({ session, post, actions, setPosts }) {
             <div>
               <Link
                 href={`/user/${username}`}
-                className="font-bold text-sm md:text-[15px] hover:text-blue-600 transition-colors"
+                className="font-bold text-white text-sm md:text-[15px] hover:text-blue-600 transition-colors"
               >
                 {username}
               </Link>
@@ -219,7 +219,7 @@ export default function Post({ session, post, actions, setPosts }) {
               maxLength="64"
               ref={commentRef}
               required
-              className="p-3 min-w-0 grow outline-none text-sm text-gray-700"
+              className="p-3 min-w-0 grow outline-none text-sm bg-black text-white"
             />
             <button
               type="submit"

@@ -32,7 +32,7 @@ export default function Search({ className, trending, setDisplayMenu }) {
           type="text"
           size="1"
           placeholder="Search user, topics, etc."
-          className="p-3 w-full outline-none text-sm bg-transparent"
+          className="p-3 w-full outline-none text-sm bg-transparent bg-black text-white"
         />
         <button
           type="submit"
@@ -47,7 +47,7 @@ export default function Search({ className, trending, setDisplayMenu }) {
         <>
           <div className="flex items-center gap-2 mb-3">
             <FaFire className="text-blue-600 text-xl" />
-            <h2 className="font-bold mt-1 md:text-lg">Hot topics</h2>
+            <h2 className="font-bold mt-1 md:text-white">Hot topics</h2>
           </div>
           <ul>
             {loading && <p>Loading...</p>}

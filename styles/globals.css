@@ -9,6 +9,10 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+.container {
+  background-color: black;
+}
+
 .spinner {
   /* width:20.5px; */
   /* height:20.5px; */
@@ -112,4 +116,23 @@ html {
   100% {
     transform: scaleY(-1) rotate(-135deg);
   }
+}
+
+.backgroundimg {
+  width: 95%;
+  height: 150px;
+  margin: 40px auto;
+  border-radius: 20px;
+}
+
+.filler-text {
+  position: absolute;
+  top: 70px;
+  left: 300px;
+  font-family: Inter;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 50px;
+  letter-spacing: 1.2px;
+  color: rgb(255, 255, 255);
 }
