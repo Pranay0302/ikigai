@@ -91,7 +91,7 @@ export default function Search({ data: session, initialPosts, users, query }) {
                   <Link
                     href={`/user/${username}`}
                     key={_id}
-                    className="border border-gray-300 rounded-xl py-3 px-5 flex items-center gap-2 hover:bg-gray-100 transition-colors"
+                    className="border border-gray-300 rounded-xl py-3 px-5 flex items-center gap-2 hover:bg-gray-700"
                   >
                     <div className="w-[36px] overflow-hidden aspect-square rounded-full">
                       <Image
@@ -102,7 +102,7 @@ export default function Search({ data: session, initialPosts, users, query }) {
                         alt=""
                       />
                     </div>
-                    <p className="font-medium text-gray-700">{username}</p>
+                    <p className="font-medium text-white">{username}</p>
                   </Link>
                 )
               })}

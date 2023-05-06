@@ -11,7 +11,7 @@ export default function MenuLinks({ session }) {
   }
 
   return (
-    <ul className="flex flex-col items-start gap-2">
+    <ul className="flex flex-col items-start gap-4">
       {session ? (
         <>
           <li>

@@ -37,7 +37,7 @@ export default function MainMenu({ className, setDisplayNew, trending,  setDispl
       >
         <HiOutlinePencilAlt className="mb-[2px] text-xl text-white/[.6]" />
         <span className="font-semibold text-sm md:text-[15px]">
-          Post a snap
+          Create a Collab
         </span>
       </button>
     </aside>

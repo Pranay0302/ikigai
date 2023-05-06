@@ -98,7 +98,7 @@ const Profile = ({ user, author }) => {
   return (
     <MainLayout>
       <StickyBlock />
-      <main className="min-h-[700px] p-7 bg-white shadow-sm rounded-lg">
+      <main className="min-h-[700px] p-7 bg-white shadow-sm mt-4 bg-gray-700 rounded-xl">
         <div className="flex items-start gap-4 mb-12">
           <div className="w-[60px] rounded-full overflow-hidden aspect-square">
             <Image
@@ -110,8 +110,8 @@ const Profile = ({ user, author }) => {
             />
           </div>
           <div>
-            <h2 className="font-bold md:text-lg">{username}</h2>
-            <div className="flex items-center gap-3 flex-wrap  text-gray-600 text-sm md:text-[15px]">
+            <h2 className="font-bold md:text-lg text-white">{username}</h2>
+            <div className="flex items-center gap-3 flex-wrap  text-white text-sm md:text-[15px]">
               <p>{followers.length} followers</p>
               <p>{following.length} following</p>
             </div>

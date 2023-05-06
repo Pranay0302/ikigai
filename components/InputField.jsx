@@ -1,7 +1,7 @@
 export function InputField(props) {
   return (
     <div className="flex flex-col gap-1 mb-4">
-      <label htmlFor={props.id} className="text-sm font-semibold">
+      <label htmlFor={props.id} className="text-sm font-semibold text-white">
         {props.label}
       </label>
       <Input {...props} />

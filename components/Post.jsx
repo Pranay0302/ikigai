@@ -69,7 +69,7 @@ export default function Post({ session, post, actions, setPosts }) {
 
   return (
     <div className="mt-4 bg-gray-700 rounded-xl">
-      <div className="mt-4 md:px-7">
+      <div className="mt-4 p-4">
         <div className="justify-between flex items-start mb-3">
           <div className="flex gap-2 items-center">
             <div className="aspect-square overflow-hidden w-[40px] rounded-full border border-black-300">
@@ -108,7 +108,7 @@ export default function Post({ session, post, actions, setPosts }) {
             </button>
           )}
         </div>
-        <p className="mb-2 text-[15px] text-gray-600">{caption}</p>
+        <p className="mb-2 text-[15px] text-white">{caption}</p>
         <div className="flex gap-2 mb-2">
           {topics !== 0 &&
             topics.map((topic, index) => {
@@ -139,17 +139,17 @@ export default function Post({ session, post, actions, setPosts }) {
               <AiOutlineHeart className="text-xl text-gray-500 group-hover:text-blue-600 transition-colors" />
             )}
 
-            <span className="text-sm md:text-[15px] text-gray-700 group-hover:text-blue-600 transition-colors">
+            <span className="text-sm md:text-[15px] text-white group-hover:text-blue-600 transition-colors">
               {likes.length} Like{likes.length > 1 && "s"}
             </span>
           </button>
           <button
             type="button"
-            className="group flex items-center text-[15px] gap-2 text-gray-700   hover:text-blue-600 transition-colors"
+            className="group flex items-center text-[15px] gap-2 text-white   hover:text-blue-600 transition-colors"
             onClick={() => setShowComments(!showComments)}
           >
             <TfiComment className="text-gray-500 group-hover:text-blue-600 transition-colors" />
-            <span className="text-sm md:text-[15px] text-gray-700 group-hover:text-blue-600 transition-colors">
+            <span className="text-sm md:text-[15px] text-white group-hover:text-blue-600 transition-colors">
               {comments.length} Comment{comments.length > 1 && "s"}
             </span>
           </button>
@@ -181,7 +181,7 @@ export default function Post({ session, post, actions, setPosts }) {
                     <div className="flex gap-4 justify-between">
                       <Link
                         href={`/user/${username}`}
-                        className="font-bold hover:text-blue-600 transition-colors text-sm md:text-[15px]"
+                        className="font-bold text-white hover:text-blue-600 transition-colors text-sm md:text-[15px]"
                       >
                         {username}
                       </Link>
@@ -189,7 +189,7 @@ export default function Post({ session, post, actions, setPosts }) {
                         {moment(createdAt).fromNow()}
                       </span>
                     </div>
-                    <p className="text-sm md:text-[15px] text-gray-600">
+                    <p className="text-sm md:text-[15px] text-white">
                       {comment}
                     </p>
                   </div>
@@ -219,7 +219,7 @@ export default function Post({ session, post, actions, setPosts }) {
               maxLength="64"
               ref={commentRef}
               required
-              className="p-3 min-w-0 grow outline-none text-sm bg-black text-white"
+              className="p-3 min-w-0 grow outline-none text-sm bg-gray-700 text-white"
             />
             <button
               type="submit"

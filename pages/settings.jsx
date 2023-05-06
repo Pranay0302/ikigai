@@ -137,7 +137,7 @@ export default function Settings({ data: session }) {
       </Head>
       <Toaster />
       <StickyBlock />
-      <div className="p-7 bg-white rounded-lg shadow-sm">
+      <div className="p-7 bg-gray-700 rounded-xl shadow-sm">
         {displayConfirmBox && (
           <ConfirmationBox
             setDisplayConfirmBox={setDisplayConfirmBox}
@@ -148,7 +148,7 @@ export default function Settings({ data: session }) {
 
         <main className="md:max-w-[500px] w-full pb-[70px] md:py-0">
           <form onSubmit={handleSubmit} className="mb-12">
-            <h2 className="md:text-xl font-bold mb-3">Settings</h2>
+            <h2 className="md:text-xl text-white font-bold mb-3">Settings</h2>
             <div className="w-[67px] border border-gray-300 overflow-hidden aspect-square rounded-full mb-3">
               <Image
                 src={
@@ -170,7 +170,7 @@ export default function Settings({ data: session }) {
                 onChange={(e) => handleOnChange(e.currentTarget)}
                 className="absolute inset-0 opacity-0"
               />
-              <p className="text-gray-700 text-sm">Change profile picture</p>
+              <p className="text-white text-sm">Change profile picture</p>
             </div>
             {fields.map((field) => {
               if (field.label) {
@@ -178,7 +178,7 @@ export default function Settings({ data: session }) {
               }
             })}
             <div className="flex flex-col gap-1 mb-3">
-              <p className="text-sm text-gray-700 font-semibold">
+              <p className="text-sm text-white font-semibold">
                 Change password
               </p>
               {fields.map((field) => {
@@ -192,8 +192,8 @@ export default function Settings({ data: session }) {
               className={`${
                 isEditing.inputs
                   ? "hover:bg-blue-700 focus:ring text-white bg-blue-600"
-                  : "border border-gray-300 text-gray-500 pointer-events-none bg-gray-100"
-              } text-sm font-medium py-2 px-6 rounded-md`}
+                  : "bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-600 transition-colors focus:ring outline-none p-3 flex items-center gap-2 justify-center rounded-md shadow-sm"
+              }`}
               disabled={loading}
             >
               Save changes
@@ -201,13 +201,13 @@ export default function Settings({ data: session }) {
           </form>
 
           <div>
-            <p className="text-sm font-medium mb-1">
+            <p className="text-sm text-white font-medium mb-1">
               Permanently delete this account?
             </p>
             <button
               type="button"
               onClick={() => setDisplayConfirmBox(true)}
-              className="text-red-600 border border-red-300 bg-red-50 flex justify-center text-sm py-2 px-6 rounded-md gap-2 hover:bg-red-100 transition-colors shadow-sm focus:ring-red-300 focus:ring-1 outline-none"
+              className="text-red-600 border border-red-300 bg-red-50 flex text-sm py-2 px-6 hover:bg-red-200 transition-colors shadow-sm focus:ring-red-300 focus:ring-1 outline-none p-3 flex items-center gap-2 justify-center rounded-md shadow-sm"
             >
               <SlTrash className="text-base" />
               <span>Delete account</span>
