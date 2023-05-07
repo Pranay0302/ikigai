@@ -26,10 +26,10 @@ export default function useNew  (props)  {
 
       // converting images to base64 & topics to array before fetching
       const { value: caption } = captionRef.current
-      const { value: topics } = topicsRef.current
-      const topicsArr = !topics.trim()
-        ? []
-        : topics.split(" ").join("").split(",")
+      const topics = topicsRef.current
+      // const topicsArr = !topics.trim()
+      //   ? []
+      //   : topics.split(" ").join("").split(",")
       const base64Images = await Promise.all(
         imageFiles.map((image) => {
           return new Promise((resolve) => {
@@ -45,7 +45,7 @@ export default function useNew  (props)  {
       )
 
       // fetch data along with the object
-      const postData = { caption, topics: topicsArr, images: base64Images }
+      const postData = { caption, topics: topics, images: base64Images }
       const response = await axios.post(`/api/post/`, postData)
       setLoading(false)
       toast.dismiss()

@@ -3,11 +3,25 @@ import { AiOutlinePlus } from "react-icons/ai"
 import { IoMdClose } from "react-icons/io"
 import useNew from "../hooks/useNew"
 import ImageInput from "./ImageInput"
+import Multiselect from "multiselect-react-dropdown"
+
+const optionsArray = [
+  {name:"🌎 3D Builder", id: "3D Builder"},
+  {name:"👗 Metaverse Fashion Designer", id: "Metaverse Fashion Designer"},
+  {name:"🏰 Metaverse Architect", id: "Metaverse Architect"},
+  {name:"🖼️ Graphics", id: "Graphics"},
+  {name:"📹 Motion Effects", id: "Motion Effects"},
+  {name:"🖌️ Illustrator", id: "Illustrator"},
+  {name:"🚀 NFT Creator", id: "NFT Creator"},
+  {name:"🗜️ NFT Collector", id: "NFT Collector"},
+  {name:"🥽 NFT Curator", id: "NFT Curator"},
+  {name:"Others", id: "Others"},
+];
 
 export default function NewSnap({ className, setDisplayNew }) {
   const inputFilesRef = useRef(null)
   const captionRef = useRef(null)
-  const topicsRef = useRef(null)
+  const topicsRef = useRef([])
   const [loading, setLoading] = useState(false)
   const [imageFiles, setImageFiles] = useState([])
   const maximumFile = 5
@@ -27,6 +41,11 @@ export default function NewSnap({ className, setDisplayNew }) {
     inputFilesRef.current.value = ""
   }, [imageFiles])
 
+  const handleTopicAdd = (newOption) => {
+    const optionsMap = newOption.map( (elem) => elem.id)
+    topicsRef.current = optionsMap;
+  }
+
   return (
     <div
       className={
@@ -37,7 +56,7 @@ export default function NewSnap({ className, setDisplayNew }) {
       <main className="max-h-full p-7 bg-white w-[90%] max-w-[500px] rounded-lg overflow-auto ">
         <form onSubmit={handleSubmit}>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-bold text-xl tracking-tight">Post snap</h2>
+            <h2 className="font-bold text-xl tracking-tight">Create a Collab</h2>
             <button
               type="button"
               onClick={() => setDisplayNew((prev) => !prev)}
@@ -107,15 +126,13 @@ export default function NewSnap({ className, setDisplayNew }) {
             <label htmlFor="topics" className="text-gray-700 text-sm">
               Topics (comma separated)
             </label>
-            <input
+            <Multiselect
+              options={optionsArray}
+              onSelect={handleTopicAdd}
+              onRemove={handleTopicAdd}
+              displayValue="name"
               ref={topicsRef}
-              type="text"
-              id="topics"
-              name="topics"
-              placeholder="developer, programming"
-              pattern="^([a-zA-Z0-9]+[,\s]*){1,20}$"
-              title="Comma separated, maximum of 20 topics"
-              className="border border-gray-300 p-2 focus:ring-1 focus:ring-blue-600 transition outline-none rounded-md text-sm"
+              placeholder="Select Tags"
             />
           </div>
 
@@ -128,7 +145,7 @@ export default function NewSnap({ className, setDisplayNew }) {
             } flex items-center gap-2 justify-center rounded-full py-2 px-6 transition-colors focus:ring outline-none  w-full max-w-[200px] hover:bg-blue-700 text-sm`}
             disabled={loading}
           >
-            <span className="text-semibold">Post snap</span>
+            <span className="text-semibold">Create a Collab</span>
           </button>
         </form>
       </main>

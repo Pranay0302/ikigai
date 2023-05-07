@@ -136,3 +136,27 @@ html {
   letter-spacing: 1.2px;
   color: rgb(255, 255, 255);
 }
+
+.width-tabs {
+  min-width: 146px;
+}
+
+.min-width-images-transition {
+  width: 300px;
+  height: 300px;
+}
+
+.nft-gallery {
+  /* margin-top: 3rem; */
+  /* margin-left: 1rem; */
+  color: white;
+  text-align: center;
+  border: 5px solid #4b5563;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.nft-gallery-text {
+  /* margin-top: 0.1rem; */
+  margin-bottom: 0.2rem;
+}

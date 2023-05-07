@@ -5,11 +5,20 @@ import MainMenu from "./MainMenu"
 import NewSnap from "./NewSnap"
 import { Toaster } from "react-hot-toast"
 import axios from "axios"
+import Image from "next/image"
+// import nft_1 from "../assets/nft_1.jpeg";
+// import nft_2 from "../assets/nft_2.jpeg";
+import nft_3 from "../assets/nft_3.png";
+import nft_4 from "../assets/nft_4.webp";
+
+const imgArray = [nft_3,nft_4];
 
 export default function MainLayout({ children }) {
   const [displayMenu, setDisplayMenu] = useState(false)
   const [displayNew, setDisplayNew] = useState(false)
   const [trending, setTrending] = useState([])
+  const [imageURL,setImageURL] = useState();
+  const [counter, setCounter] = useState(0);
 
   // hot topics
   useEffect(() => {
@@ -23,6 +32,18 @@ export default function MainLayout({ children }) {
     }
     getTrending()
   }, [])
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (counter<imgArray.length-1)
+        setCounter(counter+1)
+      else
+        setCounter(0)
+      setImageURL(imgArray[counter])
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [counter]);
 
   return (
     <div className="min-h-screen grid md:grid-cols-[1fr_2fr] xl:grid-cols-[1fr_2fr_1fr] items-start w-[95%] relative max-w-[1100px] mx-auto gap-12">
@@ -68,6 +89,9 @@ export default function MainLayout({ children }) {
       {/* right aside */}
       <aside className="hidden lg:hidden xl:flex flex-col gap-4 sticky top-8">
         <Search className="hidden lg:block" trending={trending}  setDisplayMenu={setDisplayMenu}/>
+        <div className="nft-gallery">
+          <Image src={imageURL} alt="" className="min-width-images-transition"/>
+        </div>
       </aside>
     </div>
   )
