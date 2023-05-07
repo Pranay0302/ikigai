@@ -177,3 +177,17 @@ html {
   position: relative;
   left: 190px;
 }
+
+.insight-title {
+  margin-top: 80px;
+  margin-left: 160px;
+  font-size: 26px;
+}
+
+.node-graph {
+  height: 500px;
+  width: 1000px;
+  background-color: white;
+  margin: 80px auto;
+  border-radius: 20px;
+}

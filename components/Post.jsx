@@ -140,7 +140,7 @@ export default function Post({ session, post, actions, setPosts }) {
             )}
 
             <span className="text-sm md:text-[15px] text-white group-hover:text-blue-600 transition-colors">
-              {likes.length} Like{likes.length > 1 && "s"}
+              {likes.length} Interests{likes.length > 1 && "s"}
             </span>
           </button>
           <button
