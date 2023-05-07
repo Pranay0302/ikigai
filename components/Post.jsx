@@ -109,16 +109,16 @@ export default function Post({ session, post, actions, setPosts }) {
           )}
         </div>
         <p className="mb-2 text-[15px] text-white">{caption}</p>
-        <div className="flex gap-2 mb-2">
+        <div className="flex gap-2 mb-2 tags-post">
           {topics !== 0 &&
             topics.map((topic, index) => {
               return (
                 <Link
                   href={`/search?value=${topic}`}
                   key={index}
-                  className="text-blue-600 text-[15px] hover:underline"
+                  className="text-blue-600 text-[15px] hover:underline tag-post-box"
                 >
-                  #{topic}
+                  {topic}
                 </Link>
               )
             })}

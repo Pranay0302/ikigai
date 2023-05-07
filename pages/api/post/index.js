@@ -158,7 +158,7 @@ export default async function handler(req, res) {
 
         res.json({
           success: true,
-          message: "Your snap has been posted",
+          message: "Your collab has been posted",
           post: createdPost,
         })
       } catch (error) {
