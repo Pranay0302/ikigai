@@ -6,18 +6,23 @@ import NewSnap from "./NewSnap"
 import { Toaster } from "react-hot-toast"
 import axios from "axios"
 import Image from "next/image"
-// import nft_1 from "../assets/nft_1.jpeg";
-// import nft_2 from "../assets/nft_2.jpeg";
+import nft_1 from "../assets/nft_11.jpeg";
+import nft_2 from "../assets/nft_12.png";
 import nft_3 from "../assets/nft_3.png";
 import nft_4 from "../assets/nft_4.webp";
+import nft_5 from "../assets/nft_5.jpg";
+import nft_6 from "../assets/nft_6.jpg";
+import nft_7 from "../assets/nft_7.jpeg";
+import nft_8 from "../assets/nft_8.webp";
+import nft_9 from "../assets/nft_9.jpg";
 
-const imgArray = [nft_3,nft_4];
+const imgArray = [nft_1,nft_2,nft_3,nft_4,nft_5,nft_6,nft_7,nft_8,nft_9];
 
 export default function MainLayout({ children }) {
   const [displayMenu, setDisplayMenu] = useState(false)
   const [displayNew, setDisplayNew] = useState(false)
   const [trending, setTrending] = useState([])
-  const [imageURL,setImageURL] = useState(nft_4); // replace with last nft image url
+  const [imageURL,setImageURL] = useState(imgArray[imgArray.length-1]);
   const [counter, setCounter] = useState(0);
 
   // hot topics
@@ -90,7 +95,7 @@ export default function MainLayout({ children }) {
       <aside className="hidden lg:hidden xl:flex flex-col gap-4 sticky top-8">
         <Search className="hidden lg:block" trending={trending}  setDisplayMenu={setDisplayMenu}/>
         <div className="nft-gallery">
-          <Image src={imageURL} alt="NFT Gallery" className="min-width-images-transition"/>
+          <Image src={imageURL} alt="" className="min-width-images-transition"/>
         </div>
       </aside>
     </div>

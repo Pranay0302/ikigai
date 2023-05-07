@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       }, {})
     )
       .sort((a, b) => b[1] - a[1])
-      .slice(0, 5)
+      .slice(0, 3)
       .map(([name, quantity]) => ({ name, quantity }))
     res.json(trending)
   } catch (error) {
