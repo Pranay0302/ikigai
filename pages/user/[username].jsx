@@ -98,7 +98,7 @@ const Profile = ({ user, author }) => {
   return (
     <MainLayout>
       <StickyBlock />
-      <main className="min-h-[700px] p-7 bg-white shadow-sm mt-4 bg-gray-700 rounded-xl">
+      <main className="min-h-[700px] p-7 shadow-sm mt-4 bg-gray-700 rounded-xl">
         <div className="flex items-start gap-4 mb-12">
           <div className="w-[60px] rounded-full overflow-hidden aspect-square">
             <Image
