@@ -17,7 +17,7 @@ export default function MainLayout({ children }) {
   const [displayMenu, setDisplayMenu] = useState(false)
   const [displayNew, setDisplayNew] = useState(false)
   const [trending, setTrending] = useState([])
-  const [imageURL,setImageURL] = useState();
+  const [imageURL,setImageURL] = useState(nft_4); // replace with last nft image url
   const [counter, setCounter] = useState(0);
 
   // hot topics
@@ -90,7 +90,7 @@ export default function MainLayout({ children }) {
       <aside className="hidden lg:hidden xl:flex flex-col gap-4 sticky top-8">
         <Search className="hidden lg:block" trending={trending}  setDisplayMenu={setDisplayMenu}/>
         <div className="nft-gallery">
-          <Image src={imageURL} alt="" className="min-width-images-transition"/>
+          <Image src={imageURL} alt="NFT Gallery" className="min-width-images-transition"/>
         </div>
       </aside>
     </div>

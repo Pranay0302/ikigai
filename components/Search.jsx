@@ -47,18 +47,18 @@ export default function Search({ className, trending, setDisplayMenu }) {
         <>
           <div className="flex items-center gap-2 mb-3">
             <FaFire className="text-blue-600 text-xl" />
-            <h2 className="font-bold mt-1 md:text-white">Hot topics</h2>
+            <h2 className="font-bold mt-1 md:text-white">Latest Tags</h2>
           </div>
           <ul>
             {loading && <p>Loading...</p>}
             {trending.map((topic) => (
               <li key={topic.name} className="mb-2 group">
                 <Link href={`/search?value=${topic.name}`}>
-                  <p className="font-semibold group-hover:text-blue-600 transition-colors text-gray-700 text-sm md:text-[15px]">
-                    #{topic.name}
+                  <p className="font-semibold group-hover:text-blue-600 transition-colors text-sm md:text-[15px] tag-post-box">
+                    {topic.name}
                   </p>
-                  <span className="text-gray-500 text-sm">
-                    {topic.quantity} topic{topic.quantity > 1 && "s"}
+                  <span className="text-gray-500 text-sm text-right">
+                    {topic.quantity} collab{topic.quantity > 1 && "s"}
                   </span>
                 </Link>
               </li>
