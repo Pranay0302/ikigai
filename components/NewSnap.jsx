@@ -68,7 +68,7 @@ export default function NewSnap({ className, setDisplayNew }) {
 
           <div className="flex flex-col gap-1 mb-4">
             <label htmlFor="caption" className="text-gray-700 text-sm">
-              Caption (max. 500 characters)
+              Description (max. 500 characters)
             </label>
             <textarea
               ref={captionRef}
@@ -77,7 +77,7 @@ export default function NewSnap({ className, setDisplayNew }) {
               rows="4"
               maxLength="500"
               title="Must be 500 characters only"
-              placeholder="Enter you caption"
+              placeholder="Enter your description"
               className="border border-gray-300 focus:ring-1 focus:ring-blue-600 transition outline-none p-3 rounded-md text-sm"
             ></textarea>
           </div>
@@ -124,7 +124,7 @@ export default function NewSnap({ className, setDisplayNew }) {
 
           <div className="flex flex-col mb-6 gap-1">
             <label htmlFor="topics" className="text-gray-700 text-sm">
-              Topics (comma separated)
+              Tags {"(Select your preferred tags)"}
             </label>
             <Multiselect
               options={optionsArray}

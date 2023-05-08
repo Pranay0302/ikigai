@@ -51,7 +51,7 @@ export default function Settings({ data: session }) {
     password: false,
     inputs: false,
   })
-  
+
 
   const fields = [
     {
@@ -128,7 +128,7 @@ export default function Settings({ data: session }) {
     }
   }
 
-  
+
 
   return (
     <MainLayout>
@@ -191,7 +191,7 @@ export default function Settings({ data: session }) {
               type="submit"
               className={`${
                 isEditing.inputs
-                  ? "hover:bg-blue-700 focus:ring text-white bg-blue-600"
+                  ? "hover:bg-blue-700 focus:ring text-white bg-blue-600 rounded-md p-3"
                   : "bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-600 transition-colors focus:ring outline-none p-3 flex items-center gap-2 justify-center rounded-md shadow-sm"
               }`}
               disabled={loading}

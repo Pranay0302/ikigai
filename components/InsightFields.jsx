@@ -6,14 +6,35 @@ Cytoscape.use(COSEBilkent);
 
 export default function InsightFields() {
   const elements = [
-    { data: { id: "one", label: "Node 1" }, position: { x: 0, y: 0 } },
-    { data: { id: "two", label: "Node 2" }, position: { x: 100, y: 0 } },
+    { data: { id: "zenhar123", label: "zenhar123" }, position: { x: 0, y: 0 } },
+    { data: { id: "NFT_Creator1", label: "NFT_Creator1" }, position: { x: 200, y: 0 } },
+    { data: { id: "test", label: "test" }, position: { x: 100, y: 100 } },
     {
-      data: { source: "one", target: "two", label: "Edge from Node1 to Node2" },
+      data: { source: "zenhar123", target: "NFT_Creator1", label: "Edge from Node1 to Node2" },
+      data: { source: "NFT_Creator1", target: "zenhar123", label: "123" },
     },
   ];
 
-  const layout = { name: "cose-bilkent" };
+  const layout = { name: "grid" };
+
+  const style = [
+    {
+      selector: 'node',
+      style: {
+        'background-color': '#666',
+        label: 'data(id)',
+      },
+    },
+    {
+      selector: 'edge',
+      style: {
+        "width": 3,
+        'line-color': '#ccc',
+        'target-arrow-color': '#ccc',
+        'target-arrow-shape': 'triangle',
+      },
+    },
+  ];
 
   return (
     <div>
@@ -23,6 +44,8 @@ export default function InsightFields() {
       <CytoscapeComponent
         className="node-graph"
         elements={elements}
+        // layout={layout}
+        // style={style}
       />
     </div>
   );
