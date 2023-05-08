@@ -2,6 +2,8 @@ import CytoscapeComponent from "react-cytoscapejs";
 import Cytoscape from "cytoscape";
 import COSEBilkent from "cytoscape-cose-bilkent";
 import { useState } from "react";
+import Link from "next/link";
+// import IoArrowBackCircleOutline from 'react-icons/io';
 
 Cytoscape.use(COSEBilkent);
 
@@ -105,6 +107,7 @@ export default function InsightFields() {
   return (
     <div>
       <h2 className="font-bold text-xl text-white tracking-tight insight-title">
+        <Link href={'/'} className="left-arrow mr-10"></Link>
         Insights page
       </h2>
       <div className="text-white mt-20 tabs-insight flex">
