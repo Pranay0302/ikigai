@@ -1,6 +1,7 @@
 import { signOut } from "next-auth/react"
 import Link from "next/link"
 import { AiOutlineLogout, AiOutlineUser } from "react-icons/ai"
+import { MdOutlineAnalytics } from "react-icons/md"
 import { BsGear } from "react-icons/bs"
 
 export default function MenuLinks({ session }) {
@@ -24,6 +25,12 @@ export default function MenuLinks({ session }) {
             <Link href="/settings" className={style.link}>
               <BsGear className={style.icon} />
               <span className={style.text}>Settings</span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/insights" className={style.link}>
+              <MdOutlineAnalytics className={style.icon} />
+              <span className={style.text}>Insights</span>
             </Link>
           </li>
           <li>

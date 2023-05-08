@@ -190,6 +190,15 @@ html {
   height: 500px;
   width: 1000px;
   background-color: white;
-  margin: 80px auto;
+  margin: 40px auto;
   border-radius: 20px;
+}
+
+.tabs-insight {
+  margin-left: 100px;
+}
+
+.selectedTab {
+  color:#778293;
+  text-decoration: underline;
 }
