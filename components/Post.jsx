@@ -109,6 +109,7 @@ export default function Post({ session, post, actions, setPosts }) {
           )}
         </div>
         <p className="mb-2 text-[15px] text-white">{caption}</p>
+          <div className="text-white font-semibold mb-2">Looking for</div>
         <div className="flex gap-2 mb-2 tags-post">
           {topics !== 0 &&
             topics.map((topic, index) => {
@@ -122,7 +123,7 @@ export default function Post({ session, post, actions, setPosts }) {
                 </Link>
               )
             })}
-        </div>
+            </div>
       </div>
       <Carousel images={images} />
       <div className="px-7">
@@ -139,8 +140,8 @@ export default function Post({ session, post, actions, setPosts }) {
               <AiOutlineHeart className="text-xl text-gray-500 group-hover:text-blue-600 transition-colors" />
             )}
 
-            <span className="text-sm md:text-[15px] text-white group-hover:text-blue-600 transition-colors">
-              {likes.length} Interests{likes.length > 1 && "s"}
+            <span className="text-sm md:text-[15px] text-white group-hover:text-blue-600 transition-colors pt-1">
+              {likes.length} {likes.length > 1 ? 'Interested' : "Interests"}
             </span>
           </button>
           <button
@@ -149,7 +150,7 @@ export default function Post({ session, post, actions, setPosts }) {
             onClick={() => setShowComments(!showComments)}
           >
             <TfiComment className="text-gray-500 group-hover:text-blue-600 transition-colors" />
-            <span className="text-sm md:text-[15px] text-white group-hover:text-blue-600 transition-colors">
+            <span className="text-sm md:text-[15px] text-white group-hover:text-blue-600 transition-colors pt-1">
               {comments.length} Comment{comments.length > 1 && "s"}
             </span>
           </button>
@@ -216,7 +217,7 @@ export default function Post({ session, post, actions, setPosts }) {
             <input
               type="text"
               placeholder="Add comment"
-              maxLength="64"
+              maxLength="200"
               ref={commentRef}
               required
               className="p-3 min-w-0 grow outline-none text-sm bg-gray-700 text-white"
